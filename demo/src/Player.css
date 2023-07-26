@@ -42,3 +42,16 @@
   gap: 4px;
   align-items: center;
 }
+
+button {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  font-size: 18px;
+  align-items: center;
+}

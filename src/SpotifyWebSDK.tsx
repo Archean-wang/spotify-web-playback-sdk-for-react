@@ -1,6 +1,6 @@
 import React, { createContext, useContext, useEffect, useState } from "react";
 import SpotifyPlayer, { SpotifyWebSDKProps } from "./SpotifyPlayer";
-import SpotifyPlayerState from "./SpotifyPlayerState";
+import CurrentPosition from "./CurrentPosition";
 
 const SDKReadyContext = createContext(false);
 
@@ -23,13 +23,14 @@ export default function ({
     };
     return () => {
       document.body.removeChild(script);
+      setReady(false);
     };
   }, []);
 
   return (
     <SDKReadyContext.Provider value={ready}>
       <SpotifyPlayer name={name} getOAuthToken={getOAuthToken} volume={volume}>
-        <SpotifyPlayerState>{children}</SpotifyPlayerState>
+        <CurrentPosition>{children}</CurrentPosition>
       </SpotifyPlayer>
     </SDKReadyContext.Provider>
   );

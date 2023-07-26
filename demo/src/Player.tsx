@@ -2,9 +2,11 @@ import "./Player.css";
 import {
   useCurrentTrack,
   useSpotifyPlayer,
+  useSpotifyState,
 } from "spotify-web-playback-sdk-for-react";
 
 function Player({ children }: { children?: React.ReactNode }) {
+  const state = useSpotifyState();
   const player = useSpotifyPlayer();
   const currentTrack = useCurrentTrack();
 
@@ -30,9 +32,11 @@ function Player({ children }: { children?: React.ReactNode }) {
         </div>
       </div>
       <div className="control">
-        <button onClick={previous}>{`<<`}</button>
-        <button onClick={toggle}>{`||`}</button>
-        <button onClick={next}>{`>>`}</button>
+        <button onClick={previous}>{`⮜`}</button>
+        <button onClick={toggle}>
+          {state == null || state.paused ? "▶" : "◉"}
+        </button>
+        <button onClick={next}>{`	⮞`}</button>
       </div>
       {children}
     </div>

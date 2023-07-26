@@ -4,6 +4,8 @@ import {
   SpotifyPlayer,
   WebPlaybackError,
   WebPlaybackPlayer,
+  WebPlaybackState,
+  WebPlaybackTrack,
 } from "./interfaces";
 
 export interface SpotifyWebSDKProps {
@@ -16,6 +18,10 @@ export interface SpotifyWebSDKProps {
 const PlayerContext = createContext<SpotifyPlayer | null>(null);
 const DeviceContext = createContext<WebPlaybackPlayer | null>(null);
 const ErrorContext = createContext<string | undefined>(undefined);
+const WebPlaybackStateContext = createContext<WebPlaybackState | null>(null);
+const CurrentTrackContext = createContext<WebPlaybackTrack | undefined>(
+  undefined
+);
 
 export default function SpotifyPlayer({
   name,
@@ -26,6 +32,7 @@ export default function SpotifyPlayer({
   const [player, setPlayer] = useState<SpotifyPlayer | null>(null);
   const [device, setDevice] = useState<WebPlaybackPlayer | null>(null);
   const [error, setError] = useState<string | undefined>(undefined);
+  const [state, setState] = useState<WebPlaybackState | null>(null);
   const SDKReady = useSDKReady();
 
   function onReady(webPlaybackPlayer: WebPlaybackPlayer) {
@@ -57,6 +64,10 @@ export default function SpotifyPlayer({
     setError(`Failed to perform playback ${message}`);
   }
 
+  function onPlayerStateChanged(state: WebPlaybackState) {
+    setState(state);
+  }
+
   useEffect(() => {
     if (SDKReady) {
       //@ts-ignore
@@ -82,6 +93,8 @@ export default function SpotifyPlayer({
 
       player.addListener("account_error", onAccountError);
 
+      player.addListener("player_state_changed", onPlayerStateChanged);
+
       player.connect();
     }
     return () => {
@@ -102,7 +115,14 @@ export default function SpotifyPlayer({
   return (
     <PlayerContext.Provider value={player}>
       <DeviceContext.Provider value={device}>
-        <ErrorContext.Provider value={error}>{children}</ErrorContext.Provider>
+        <ErrorContext.Provider value={error}>
+          <WebPlaybackStateContext.Provider value={state}>
+            <CurrentTrackContext.Provider
+              value={state?.track_window.current_track}>
+              {children}
+            </CurrentTrackContext.Provider>
+          </WebPlaybackStateContext.Provider>
+        </ErrorContext.Provider>
       </DeviceContext.Provider>
     </PlayerContext.Provider>
   );
@@ -118,4 +138,12 @@ export function useSpotifyDevice() {
 
 export function useSpotifyError() {
   return useContext(ErrorContext);
+}
+
+export function useSpotifyState() {
+  return useContext(WebPlaybackStateContext);
+}
+
+export function useCurrentTrack() {
+  return useContext(CurrentTrackContext);
 }

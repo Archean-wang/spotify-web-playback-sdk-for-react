@@ -4,10 +4,8 @@ export {
   useSpotifyPlayer,
   useSpotifyDevice,
   useSpotifyError,
+  useSpotifyState,
+  useCurrentTrack,
 } from "./SpotifyPlayer";
 
-export {
-  useSpotifyState,
-  usePosition,
-  useCurrentTrack,
-} from "./SpotifyPlayerState";
+export { usePosition } from "./CurrentPosition";
