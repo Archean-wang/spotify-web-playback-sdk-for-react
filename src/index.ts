@@ -7,5 +7,3 @@ export {
   useSpotifyState,
   useCurrentTrack,
 } from "./SpotifyPlayer";
-
-export { usePosition } from "./CurrentPosition";

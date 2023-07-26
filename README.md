@@ -67,19 +67,6 @@ function State() {
 ---
 
 The following hooks are actually attributes extracted from the state, just for convinient
-### usePosition
-Return the position of current playing track, undfined when no track is playing.
-
-```TS
-function Position() {
-    const position = usePosition()
-    return (
-        <div>
-            <p>{`current position: ${position}`}</p>
-        </div>
-    )
-}
-```
 
 ### useCurrentTrack
 Return current playing track, can be null.
