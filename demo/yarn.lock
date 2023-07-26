@@ -1401,9 +1401,9 @@ source-map-js@^1.0.2:
   integrity sha512-R0XvVJ9WusLiqTCEiGCmICCMplcCkIwwR11mOSD9CR5u+IXYdiseeEuXCVAjS54zqwkLcPNnmU4OeJ6tUrWhDw==
 
 spotify-web-playback-sdk-for-react@^1.0.0:
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/spotify-web-playback-sdk-for-react/-/spotify-web-playback-sdk-for-react-1.0.2.tgz#28145afa8b7e67c007e9c96703b40a4004e49525"
-  integrity sha512-GnmyqP3prGY1KW2an0xGBEi52++JP0lH7bWR2zfO5wFNI+eaJdzqMAYjyHj5HZS4llgOLoSaYbzwO6XzqTI/5w==
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/spotify-web-playback-sdk-for-react/-/spotify-web-playback-sdk-for-react-1.1.0.tgz#a2f3e9cec20c7e0f7e98c124258451cb64200bbb"
+  integrity sha512-WtBH9cQL6k6CUdjLn7JOJclmw6l01bxpZfkcj7nxkzWYeFhdISKLrW5utdZ7U7m9GS7pEmxEcZ89xhk95R2yiw==
   dependencies:
     react "^18.2.0"
     react-dom "^18.2.0"

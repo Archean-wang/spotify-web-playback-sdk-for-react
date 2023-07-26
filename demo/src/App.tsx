@@ -5,10 +5,10 @@ import "./App.css";
 export default function App() {
   return (
     <SpotifyWebSDK
-      name="hahaha"
+      name="spotify-react"
       getOAuthToken={(cb) =>
         cb(
-          "BQD3uwCM32l5G7oYHF4ZXAjf0ynLwEPIm4AOcoXUnhiq1Um47FQVUTwl2USXrtVP7yF-GKecaAcKRk50mtgBedFuE1h-6kOsfri8eHUXHcoV35llnW1Vb_8FtyuPKqenqBUvalnEyD0Su_AuXweD9O_NKQviyjTpaXwVus6-o09Rr9lLaeOPEhgjziw58JF1bYNdgcWx2zIf9tqJ96aOok2HVM7OLBl4sJAIsa2a2NoVD8xnmO3I65PfOTlg3swgKOgKXjuQIAXCNbFtN6GRPHMvApLQOWfuVvxk5LCJQkhXNtVOdJJmzFrkEr89devcLAAiJXDxOgjmhviV"
+          "BQAivvnvXCuHFBfJpZcI1cJJU5iMhWIeDdsG3-aKtfD3r3LuWMO3n_Peh9xaBlBl3adfU1GLWR3U18oUApnqR507VhFgUM2bKnyqTwiIJ5nZUzM2Q5mda5p4cR8HknSzOKvaANqzIba1mzbPPHDHJfFecHg5C9EM2wjVaQgfAD1wq-QnTTWVCE3fhnrXMiSfKifL_5IZ-EZrNQvrWi-YGi_hfKj1URa7xH9qZHuORoNNAW3A_zCNkdBCodNo1tP0UxPe2-9jV6bidgCcU1wRLdpujhryX4IRK0qPqL3ckITnaF0GRQjz_wgU01XLZo_T0DHC6zs-4X-fylua"
         )
       }>
       <Player />

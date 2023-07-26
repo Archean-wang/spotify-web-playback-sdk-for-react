@@ -96,9 +96,8 @@ export default function SpotifyPlayer({
       player.addListener("player_state_changed", onPlayerStateChanged);
 
       player.connect();
-    }
-    return () => {
-      if (player) {
+
+      return () => {
         player.removeListener("ready");
         player.removeListener("not_ready");
         player.removeListener("autoplay_failed");
@@ -108,8 +107,8 @@ export default function SpotifyPlayer({
         player.removeListener("account_error");
 
         player.disconnect();
-      }
-    };
+      };
+    }
   }, [SDKReady]);
 
   return (
