@@ -35,6 +35,7 @@ interface WebPlaybackState {
     skipping_next?: boolean;
     skipping_prev?: boolean;
   };
+  duration: number;
   paused: boolean;
   position: number;
   repeat_mode: 0 | 1 | 2; // The repeat mode. No repeat mode is 0,
@@ -58,13 +59,13 @@ interface SpotifyPlayer {
   pause: () => Promise<undefined>;
   resume: () => Promise<undefined>;
   togglePlay: () => Promise<undefined>;
-  seek: () => Promise<undefined>;
+  seek: (position: number) => Promise<undefined>;
   previousTrack: () => Promise<undefined>;
   nextTrack: () => Promise<undefined>;
   activateElement: () => Promise<undefined>;
 }
 
-export {
+export type {
   SpotifyPlayer,
   WebPlaybackError,
   WebPlaybackPlayer,

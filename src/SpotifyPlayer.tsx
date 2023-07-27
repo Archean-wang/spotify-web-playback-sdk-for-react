@@ -41,11 +41,11 @@ export default function SpotifyPlayer({
   }
 
   function onNotReady({ device_id }: WebPlaybackPlayer) {
-    console.log("Device ID has gone offline", device_id);
+    setError(`Device ID ${device_id} has gone offline`);
   }
 
   function onAutoPlayFailed({ device_id }: WebPlaybackPlayer) {
-    console.warn(device_id, "autoplay failed");
+    setError(`Device ${device_id} autoplay failed`);
   }
 
   function onInitializationError({ message }: WebPlaybackError) {
