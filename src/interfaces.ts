@@ -47,7 +47,7 @@ interface WebPlaybackState {
     next_tracks: WebPlaybackTrack[];
   };
 }
-interface SpotifyPlayer {
+interface SpotifyPlayerInstance {
   connect: () => Promise<Boolean>;
   disconnect: () => void;
   addListener: (event: string, cb: Function) => Boolean;
@@ -66,7 +66,7 @@ interface SpotifyPlayer {
 }
 
 export type {
-  SpotifyPlayer,
+  SpotifyPlayerInstance,
   WebPlaybackError,
   WebPlaybackPlayer,
   WebPlaybackState,

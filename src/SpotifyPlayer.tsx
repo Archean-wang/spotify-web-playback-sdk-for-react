@@ -1,7 +1,7 @@
 import React, { createContext, useContext, useEffect, useState } from "react";
 import { useSDKReady } from "./SpotifyWebSDK";
 import {
-  SpotifyPlayer,
+  SpotifyPlayerInstance,
   WebPlaybackError,
   WebPlaybackPlayer,
   WebPlaybackState,
@@ -15,7 +15,7 @@ export interface SpotifyWebSDKProps {
   children?: React.ReactNode;
 }
 
-const PlayerContext = createContext<SpotifyPlayer | null>(null);
+const PlayerContext = createContext<SpotifyPlayerInstance | null>(null);
 const DeviceContext = createContext<WebPlaybackPlayer | null>(null);
 const ErrorContext = createContext<string | undefined>(undefined);
 const WebPlaybackStateContext = createContext<WebPlaybackState | null>(null);
@@ -29,7 +29,7 @@ export default function SpotifyPlayer({
   volume,
   children,
 }: SpotifyWebSDKProps) {
-  const [player, setPlayer] = useState<SpotifyPlayer | null>(null);
+  const [player, setPlayer] = useState<SpotifyPlayerInstance | null>(null);
   const [device, setDevice] = useState<WebPlaybackPlayer | null>(null);
   const [error, setError] = useState<string | undefined>(undefined);
   const [state, setState] = useState<WebPlaybackState | null>(null);
@@ -75,7 +75,7 @@ export default function SpotifyPlayer({
         name: name,
         getOAuthToken: getOAuthToken,
         volume: volume ? volume : 0.5,
-      }) as SpotifyPlayer;
+      }) as SpotifyPlayerInstance;
 
       setPlayer(player);
 
