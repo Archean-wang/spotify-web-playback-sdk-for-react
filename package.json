@@ -8,7 +8,11 @@
     "type": "git",
     "url": "https://github.com/Archean-wang/spotify-web-playback-sdk-for-react.git"
   },
-  "version": "1.1.3",
+  "keywords": [
+    "react",
+    "spotify"
+  ],
+  "version": "1.1.4",
   "license": "MIT",
   "main": "src/index.ts",
   "types": "src/index.ts",

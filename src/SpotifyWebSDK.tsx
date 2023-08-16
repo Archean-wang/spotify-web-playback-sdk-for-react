@@ -8,6 +8,7 @@ export default function ({
   getOAuthToken,
   volume,
   children,
+  enableMediaSession = false,
 }: SpotifyWebSDKProps) {
   const [ready, setReady] = useState(false);
   useEffect(() => {
@@ -16,8 +17,7 @@ export default function ({
     script.src = "https://sdk.scdn.co/spotify-player.js";
     document.body.appendChild(script);
 
-    //@ts-ignore
-    window.window.onSpotifyWebPlaybackSDKReady = () => {
+    window.onSpotifyWebPlaybackSDKReady = () => {
       setReady(true);
     };
     return () => {
@@ -28,7 +28,11 @@ export default function ({
 
   return (
     <SDKReadyContext.Provider value={ready}>
-      <SpotifyPlayer name={name} getOAuthToken={getOAuthToken} volume={volume}>
+      <SpotifyPlayer
+        name={name}
+        getOAuthToken={getOAuthToken}
+        volume={volume}
+        enableMediaSession={enableMediaSession}>
         {children}
       </SpotifyPlayer>
     </SDKReadyContext.Provider>

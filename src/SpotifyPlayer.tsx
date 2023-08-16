@@ -13,6 +13,7 @@ export interface SpotifyWebSDKProps {
   getOAuthToken: (cb: Function) => void;
   volume?: number;
   children?: React.ReactNode;
+  enableMediaSession?: boolean;
 }
 
 const PlayerContext = createContext<SpotifyPlayerInstance | null>(null);
@@ -28,6 +29,7 @@ export default function SpotifyPlayer({
   getOAuthToken,
   volume,
   children,
+  enableMediaSession,
 }: SpotifyWebSDKProps) {
   const [player, setPlayer] = useState<SpotifyPlayerInstance | null>(null);
   const [device, setDevice] = useState<WebPlaybackPlayer | null>(null);
@@ -70,12 +72,12 @@ export default function SpotifyPlayer({
 
   useEffect(() => {
     if (SDKReady) {
-      //@ts-ignore
       const player = new window.Spotify.Player({
         name: name,
         getOAuthToken: getOAuthToken,
         volume: volume ? volume : 0.5,
-      }) as SpotifyPlayerInstance;
+        enableMediaSession,
+      });
 
       setPlayer(player);
 
