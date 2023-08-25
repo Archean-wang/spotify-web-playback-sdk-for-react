@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useEffect, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 import SpotifyPlayer, { SpotifyWebSDKProps } from "./SpotifyPlayer";
 
 const SDKReadyContext = createContext(false);
