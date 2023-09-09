@@ -111,7 +111,7 @@ export default function SpotifyPlayer({
         player.disconnect();
       };
     }
-  }, [SDKReady]);
+  }, [SDKReady, name, volume, enableMediaSession, getOAuthToken]);
 
   return (
     <PlayerContext.Provider value={player}>

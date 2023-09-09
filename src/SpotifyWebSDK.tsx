@@ -3,7 +3,7 @@ import SpotifyPlayer, { SpotifyWebSDKProps } from "./SpotifyPlayer";
 
 const SDKReadyContext = createContext(false);
 
-export default function ({
+export default function SpotifyWebSDK({
   name,
   getOAuthToken,
   volume,

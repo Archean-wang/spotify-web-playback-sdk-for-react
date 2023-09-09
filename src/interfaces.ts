@@ -48,12 +48,12 @@ interface WebPlaybackState {
   };
 }
 interface SpotifyPlayerInstance {
-  connect: () => Promise<Boolean>;
+  connect: () => Promise<boolean>;
   disconnect: () => void;
-  addListener: (event: string, cb: Function) => Boolean;
-  removeListener: (event: string, cb?: Function) => Boolean;
+  addListener: (event: string, cb: Function) => boolean;
+  removeListener: (event: string, cb?: Function) => boolean;
   getCurrentState: () => Promise<WebPlaybackState>;
-  setName: (name: String) => Promise<undefined>;
+  setName: (name: string) => Promise<undefined>;
   getVolume: () => Promise<number>;
   setVolume: (volume: number) => Promise<undefined>;
   pause: () => Promise<undefined>;

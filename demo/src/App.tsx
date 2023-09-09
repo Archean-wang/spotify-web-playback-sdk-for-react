@@ -8,7 +8,7 @@ export default function App() {
       name="spotify-react"
       getOAuthToken={(cb) =>
         cb(
-          "BQAivvnvXCuHFBfJpZcI1cJJU5iMhWIeDdsG3-aKtfD3r3LuWMO3n_Peh9xaBlBl3adfU1GLWR3U18oUApnqR507VhFgUM2bKnyqTwiIJ5nZUzM2Q5mda5p4cR8HknSzOKvaANqzIba1mzbPPHDHJfFecHg5C9EM2wjVaQgfAD1wq-QnTTWVCE3fhnrXMiSfKifL_5IZ-EZrNQvrWi-YGi_hfKj1URa7xH9qZHuORoNNAW3A_zCNkdBCodNo1tP0UxPe2-9jV6bidgCcU1wRLdpujhryX4IRK0qPqL3ckITnaF0GRQjz_wgU01XLZo_T0DHC6zs-4X-fylua"
+          "BQCVpUDCLD0Pjh7tBCgnPj7Vn1fgH8OubYLJljXRP0gWlvfqVWXCLFCL9jJYxowxJ1V5caCatwmSqEboCd1of8iOcm7J3MK5IWhnvtdgOKxX-kckuMcUV_zM8xVWrVtbNIU9lnEpDZbZVp9eFsV29vK2X_x0JbdGC44zieFh9stYXTfTdO_bek6qfkahCrHjG9zjVqlVI405oZ_uxbC3wXiDTYUtzkIECCdlYf1kKf0RVBGiNYG5_OdCDK5k2_PxPpKuLq83an31u-6ry5TUBDxiKAk62uiFK5t7cs1BJk-tAWv3NcamAGHABcytejj_lNo_QVeBOQDFUXMj"
         )
       }>
       <Player />
