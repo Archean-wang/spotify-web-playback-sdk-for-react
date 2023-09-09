@@ -8,6 +8,10 @@ pnpm-debug.log*
 lerna-debug.log*
 
 node_modules
+.github
+.eslint.*
+tsconfig.*
+vite.*
 demo
 dist-ssr
 *.local

@@ -12,7 +12,7 @@
     "react",
     "spotify"
   ],
-  "version": "1.1.6",
+  "version": "2.0.0",
   "license": "MIT",
   "main": "dist/spotify-web-playback-sdk-for-react.js",
   "types": "dist/index.d.ts",
@@ -23,7 +23,7 @@
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
   },
-  "dependencies": {
+  "peerDependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },

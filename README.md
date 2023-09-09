@@ -11,6 +11,7 @@ import { SpotifyWebSDK } from "spotify-web-playback-sdk-for-react";
       name="hahaha"
       getOAuthToken={(cb) => cb("token")}
       volume=0.5
+      enableMediaSession=true
       >
 </SpotifyWebSDK>
 ```
@@ -19,6 +20,8 @@ import { SpotifyWebSDK } from "spotify-web-playback-sdk-for-react";
 `getOAuthToken`: The callback getOAuthToken expected to provide a valid access_token.
 
 `volume`: The volume of the player represented as a decimal value between 0 and 1.
+
+`enableMediaSession`: If set to true, the Media Session API will be set with metadata and action handlers. Default value is false.
 
 Given valid token and run the code, you should see a device named `name` from the official Spotify app.
 
