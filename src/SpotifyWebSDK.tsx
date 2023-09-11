@@ -1,9 +1,9 @@
-import { createContext, useContext, useEffect, useState } from "react";
+import { createContext, memo, useContext, useEffect, useState } from "react";
 import SpotifyPlayer, { SpotifyWebSDKProps } from "./SpotifyPlayer";
 
 const SDKReadyContext = createContext(false);
 
-export default function SpotifyWebSDK({
+function SpotifyWebSDK({
   name,
   getOAuthToken,
   volume,
@@ -43,3 +43,5 @@ export function useSDKReady() {
   const ready = useContext(SDKReadyContext);
   return ready;
 }
+
+export default memo(SpotifyWebSDK);
