@@ -7,3 +7,11 @@ export {
   useSpotifyState,
   useCurrentTrack,
 } from "./SpotifyPlayer";
+
+export type {
+  SpotifyPlayerInstance,
+  WebPlaybackError,
+  WebPlaybackPlayer,
+  WebPlaybackState,
+  WebPlaybackTrack,
+} from './interfaces'
